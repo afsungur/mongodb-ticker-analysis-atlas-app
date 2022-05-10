@@ -3,7 +3,7 @@
 
 This repository includes the complete export of the Atlas App Services Application, Financial Ticker Analysis. Please follow the guideline below to make it ready for use. 
 
-- Time to complete: 30 minutes after Atlas Cluster has been provisioned
+- Time to complete: 30 minutes after an Atlas Cluster has been provisioned
 
 ## Pre-Requisites
 
@@ -12,36 +12,38 @@ This repository includes the complete export of the Atlas App Services Applicati
  - Create the following collections (keep the database and collection names the same otherwise you'll need to change config)
 	 - Collection name: `exchange.cryptoTickerCoinbase`
 		 ```javascript
-		 use exchange
+		use exchange
 		db.createCollection("cryptoTickerCoinbase",
-		    {
-		        "timeseries" : {
-		            "timeField" : "time",
-		            "metaField" : "symbol",
-		            "granularity" : "seconds"
-		        },
-		        "expireAfterSeconds": 259200 
-		    }
+			{
+				"timeseries" : {
+					"timeField" : "time",
+					"metaField" : "symbol",
+					"granularity" : "seconds"
+				},
+				"expireAfterSeconds": 259200 
+			}
 		)
 
 		db.cryptoTickerCoinbase.createIndex({ symbol: 1, time:1 })
+		db.cryptoTickerCoinbase.createIndex({ time:1 })
 		 ```
 
 	 - Collection name: `exchange.cryptoTickerBinance`
 		 ```javascript
-		 use exchange
+		use exchange
 		db.createCollection("cryptoTickerBinance",
-		    {
-		        "timeseries" : {
-		            "timeField" : "time",
-		            "metaField" : "symbol",
-		            "granularity" : "seconds"
-		        },
-		        "expireAfterSeconds": 259200 
-		    }
+			{
+				"timeseries" : {
+					"timeField" : "time",
+					"metaField" : "symbol",
+					"granularity" : "seconds"
+				},
+				"expireAfterSeconds": 259200 
+			}
 		)
 
 		db.cryptoTickerBinance.createIndex({ symbol: 1, time:1 })
+		db.cryptoTickerBinance.createIndex({ time:1 })
 		 ```
 
 
@@ -53,14 +55,15 @@ This repository includes the complete export of the Atlas App Services Applicati
 	- Provide a name for your application
 	- Choose the Atlas cluster that you want to connect from this application
 		- Automatically necessary [Linked Data Source](https://www.mongodb.com/docs/realm/mongodb/link-a-data-source/#:~:text=To%20connect%20to%20a%20data,an%20import/export%20configuration%20directory.) will be created.
-	- Choose Global Deployment Option
+	- You can find an example in the below.
+		![CLI Login](pics/CreateARealmApplication.png)
 
-You can find an example in the below.
 
 2. Enable hosting in your Realm Application
 	- Check this out: https://www.mongodb.com/docs/realm/hosting/enable-hosting/ 
+	- ![CLI Login](pics/HostingEnabled.png)
 
-3. Authenticate to the Application via `realm-cli`
+3. Authenticate to the Application via `realm-cli` after you Create the API key
 	- Check this out: https://www.mongodb.com/docs/realm/reference/cli-auth-with-api-token/
 	![CLI Login](pics/RealmCliLogin.jpg)
  	
@@ -70,7 +73,7 @@ You can find an example in the below.
 		Currently logged in user: qrjaulcs (********-****-****-****-ad082b5d4380)
 	```
 
-5. Export your Application into the local directory
+5. Export this Realm Application into the local directory
 	- Get the application id from the user interface
 	- And pass it to the utility as shown in the below
 	- You will be required to choose the project

@@ -1,0 +1,8 @@
+{
+    "name": "mongodb-atlas-federated-connection",
+    "type": "datalake",
+    "config": {
+        "dataLakeName": "atlas-online-archive-624c21962cadde288a8b0ec5"
+    },
+    "version": 1
+}

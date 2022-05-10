@@ -1,0 +1,72 @@
+[
+    {
+        "name": "GetSymbols",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "GenerateAggregationStagesMovingAverage",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "GetLatestTSCollectionStatistics",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "GenerateAggregationStagesMACD",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "BinanceFetchTickerData",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "GenerateAggregationStagesStochasticOscillator",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "CoinbaseFetchTickerData",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "LoadMinuteBasedReport",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "GenerateAggregationStagesRSI",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "GetExampleDocument",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "EvaluateRules",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "GetTickerReport",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "GenerateAggregationStagesCandleStick",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "GenerateAggregationStagesInitialFiltering",
+        "private": false,
+        "run_as_system": true
+    }
+]

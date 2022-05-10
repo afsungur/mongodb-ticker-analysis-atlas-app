@@ -1,0 +1,16 @@
+{
+    "name": "ScheduledCoinbaseFetchTickerData",
+    "type": "SCHEDULED",
+    "config": {
+        "schedule": "*/1 * * * *",
+        "skip_catchup_events": false
+    },
+    "disabled": false,
+    "event_processors": {
+        "FUNCTION": {
+            "config": {
+                "function_name": "CoinbaseFetchTickerData"
+            }
+        }
+    }
+}

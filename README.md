@@ -95,30 +95,13 @@ This repository includes the complete export of the Atlas App Services Applicati
 	- Assumed that current directory is the cloned repository and ```../TickerApplication/``` is the folder where you pulled your realm application into.
 
 	```bash
-		$ cp -r functions ../TickerApplication/
-		$ cp -r values ../TickerApplication/
-		$ cp -r triggers ../TickerApplication/
-		$ cp -r hosting/files ../TickerApplication/hosting/
-		$ cp -r data_sources/mongodb-atlas/exchange ../TickerApplication/data_sources/mongodb-atlas/
-		$ cp -r auth ../TickerApplication/
+		$ cp -r app/functions ../TickerApp/
+		$ cp -r app/values ../TickerApp/
+		$ cp -r app/triggers ../TickerApp/
+		$ cp -r app/hosting/files ../TickerApp/hosting/
+		$ cp -r app/data_sources/mongodb-atlas/exchange ../TickerApp/data_sources/mongodb-atlas/
+		$ cp -r app/auth ../TickerApp/
 	```
-
-8. Add the following attributes into ```hosting/config.json``` file that is in your pulled realm application. 
-
-	```
-		"default_response_code": 200,
-		"default_error_path": "/index.html",
-	```
-	- Ultimately  ```hosting/config.json``` file in your application should look like the following:
-
-		```
-		{
-		    "enabled": true,
-		    "app_default_domain": "tickerapplication-blhjj.mongodbstitch.com",
-		    "default_response_code": 200,
-		    "default_error_path": "/index.html",
-		}
-		```
 
 9. Change the REALM_APP_ID variable value in the ```config.js``` file with your realm application id. ```config.js``` file is in the ```hosting/files/``` folder of your application:
 
@@ -131,20 +114,30 @@ This repository includes the complete export of the Atlas App Services Applicati
 
 10. Make sure you have the following folder structure after you've completed all the operations above.
 
+	![CLI Login](pics/FolderStructure.jpg)
 
-11. Push the local changes into the remote
+
+
+11. Make sure you are on the root folder of your realm application. And then push the local changes into the remote
 	- ```$ realm-cli push --include-hosting ```
 	- Confirm the changes if it's asked
 
 
+12. Enable Single Page Application in Realm Static Hosting. 
+	- In order to do that, go to Hosting section of Realm Application. 
+		- ![CLI Login](pics/Hosting.png)
+	- Then choose index.html file as SPA file and save it.
+		- ![CLI Login](pics/ChooseSPAEntrypoint.png)
+
+
 12. Static hosting will not be ready immediately. In the meantime, you can check the collections that needs to be filled with the records by Scheduled Trigger. Check the number of records for the following collections:
 	
-```javascript
-	use exchange
-	db.cryptoTickerBinance.countDocuments()
-	db.cryptoTickerCoinbase.countDocuments()
+	```javascript
+		use exchange
+		db.cryptoTickerBinance.countDocuments()
+		db.cryptoTickerCoinbase.countDocuments()
 
-```
+	```
 
 13. After 10-15 minutes, visit the hosting.
 	- You should see the Latest Information section data to be filled out in a few seconds. Basically, it runs some queries on the database to fetch some statistics.

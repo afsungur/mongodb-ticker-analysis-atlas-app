@@ -1,0 +1,10 @@
+{
+    "from_secret": false,
+    "name": "activeConfiguration",
+    "value": {
+        "exchangeCollectionName": "cryptoTickerBinance",
+        "exchangeDBName": "exchange",
+        "exchangeDataSourceName": "mongodb-atlas",
+        "exchangeLookupDataSourceName": "mongodb-atlas"
+    }
+}

@@ -1,6 +1,15 @@
 
 # Ticker Analysis Application for Atlas App Services
 
+## Contents
+
+- [Intro](https://github.com/afsungur/mongodb-ticker-analysis-atlas-app#intro)
+- [Pre-Requisites](https://github.com/afsungur/mongodb-ticker-analysis-atlas-app#pre-requisites)
+- [Steps to Install Application](https://github.com/afsungur/mongodb-ticker-analysis-atlas-app#steps-to-install-application)
+- [Modifying the React Web Application](https://github.com/afsungur/mongodb-ticker-analysis-atlas-app#modifying-react-web-application)
+
+## Intro
+
 This repository includes the complete export of the Atlas App Services Application, Financial Ticker Analysis. Please follow the guideline below to make it ready for use. 
 
 - Time to complete: 30 minutes after an Atlas Cluster has been provisioned
@@ -8,7 +17,7 @@ This repository includes the complete export of the Atlas App Services Applicati
 ## Pre-Requisites
 
  - Have a MongoDB Cloud Account -> cloud.mongodb.com
- - Provision a minimum M10 Database Cluster (?)
+ - Provision a minimum M10 Database Cluster
  - Create the following collections (keep the database and collection names the same otherwise you'll need to change config)
 	 - Collection name: `exchange.cryptoTickerCoinbase`
 		 ```javascript
@@ -56,16 +65,16 @@ This repository includes the complete export of the Atlas App Services Applicati
 	- Choose the Atlas cluster that you want to connect from this application
 		- Automatically necessary [Linked Data Source](https://www.mongodb.com/docs/realm/mongodb/link-a-data-source/#:~:text=To%20connect%20to%20a%20data,an%20import/export%20configuration%20directory.) will be created.
 	- You can find an example in the below.
-		![CLI Login](pics/CreateARealmApplication.png)
+		![App Create](pics/CreateARealmApplication.png)
 
 
-2. Enable hosting in your Realm Application
+2. Enable hosting in your Atlas App Services Application
 	- Check this out: https://www.mongodb.com/docs/realm/hosting/enable-hosting/ 
-	- ![CLI Login](pics/HostingEnabled.png)
+	- ![Enable Hosting](pics/HostingEnabled.png)
 
-3. Authenticate to the Application via `realm-cli` after you Create the API key
+3. Authenticate to the Application via `realm-cli` after you created the API key
 	- Check this out: https://www.mongodb.com/docs/realm/reference/cli-auth-with-api-token/
-	![CLI Login](pics/RealmCliLogin.jpg)
+	![Authenticate](pics/RealmCliLogin.jpg)
  	
 4. Verify that you've logged in successfully:
 	```bash
@@ -73,7 +82,7 @@ This repository includes the complete export of the Atlas App Services Applicati
 		Currently logged in user: qrjaulcs (********-****-****-****-ad082b5d4380)
 	```
 
-5. Export this Realm Application into the local directory
+5. Export this App Services Application into the local directory
 	- Get the application id from the user interface
 	- And pass it to the utility as shown in the below
 	- You will be required to choose the project
@@ -81,7 +90,7 @@ This repository includes the complete export of the Atlas App Services Applicati
 		$ realm-cli pull --remote tickerapplication-blhjj --include-hosting
 		$ cd TickerApplication/
 	```
-	![CLI Login](pics/RealmCliPull.png)
+	![Pull](pics/RealmCliPull.png)
 
 	
 
@@ -91,8 +100,8 @@ This repository includes the complete export of the Atlas App Services Applicati
 		git clone https://github.com/afsungur/mongodb-ticker-analysis-atlas-app.git
 		cd mongodb-ticker-analysis-atlas-app
 	```
-7. Copy the following folders from the cloned repository to the your realm application that you pulled into your local drive.
-	- Assumed that current directory is the cloned repository and ```../TickerApplication/``` is the folder where you pulled your realm application into.
+7. Copy the following folders from the cloned repository to the your App Services Application that you pulled into your local drive.
+	- Assumed that current directory is the cloned repository and ```../TickerApplication/``` is the folder where you pulled your App Services App into.
 
 	```bash
 		$ cp -r app/functions ../TickerApp/
@@ -103,7 +112,7 @@ This repository includes the complete export of the Atlas App Services Applicati
 		$ cp -r app/auth ../TickerApp/
 	```
 
-9. Change the REALM_APP_ID variable value in the ```config.js``` file with your realm application id. ```config.js``` file is in the ```hosting/files/``` folder of your application:
+9. Change the REALM_APP_ID variable value in the ```config.js``` file with your App Services Application id. ```config.js``` file is in the ```hosting/files/``` folder of your application:
 
 	```
 		REALM_APP_ID = "tickerapplication-blhjj"
@@ -114,17 +123,17 @@ This repository includes the complete export of the Atlas App Services Applicati
 
 10. Make sure you have the following folder structure after you've completed all the operations above.
 
-	![CLI Login](pics/FolderStructure.jpg)
+	![FolderStructure](pics/FolderStructure.jpg)
 
 
 
-11. Make sure you are on the root folder of your realm application. And then push the local changes into the remote
+11. Make sure you are on the root folder of your App Services Application. And then push the local changes into the remote
 	- ```$ realm-cli push --include-hosting ```
 	- Confirm the changes if it's asked
 
 
-12. Enable Single Page Application in Realm Static Hosting. 
-	- In order to do that, go to Hosting section of Realm Application. 
+12. Enable Single Page Application in App Services Hosting. 
+	- In order to do that, go to Hosting section of App Services Application. 
 		- ![CLI Login](pics/Hosting.png)
 	- Then choose index.html file as SPA file and save it.
 		- ![CLI Login](pics/ChooseSPAEntrypoint.png)
@@ -151,3 +160,8 @@ This repository includes the complete export of the Atlas App Services Applicati
 			- ![App Demo](pics/App03.png)
 		- You'll see the Generated Aggregation Query as in the below:
 			- ![App Demo](pics/App04.png)
+
+
+## Modifying the React Web Application
+
+This repository has static hosting files that includes compiled React Web App. In order to update the React Web Application, please have a look at [the other repository](https://github.com/afsungur/mongodb-ticker-analysis-react-app) that includes source code of the React Web App.

@@ -165,3 +165,5 @@ This repository includes the complete export of the Atlas App Services Applicati
 ## Modifying the React Web Application
 
 This repository has static hosting files that includes compiled React Web App. In order to update the React Web Application, please have a look at [the other repository](https://github.com/afsungur/mongodb-ticker-analysis-react-app) that includes source code of the React Web App.
+
+After you've completed your changes for React Web App, built it and upload the built folder accordingly into the App Services Hosting.

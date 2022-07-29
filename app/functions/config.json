@@ -1,6 +1,6 @@
 [
     {
-        "name": "GetSymbols",
+        "name": "GetExampleDocument",
         "private": false,
         "run_as_system": true
     },
@@ -10,22 +10,7 @@
         "run_as_system": true
     },
     {
-        "name": "GetLatestTSCollectionStatistics",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "GenerateAggregationStagesMACD",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "BinanceFetchTickerData",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "GenerateAggregationStagesStochasticOscillator",
+        "name": "LoadMinuteBasedReport",
         "private": false,
         "run_as_system": true
     },
@@ -35,7 +20,7 @@
         "run_as_system": true
     },
     {
-        "name": "LoadMinuteBasedReport",
+        "name": "EvaluateRules",
         "private": false,
         "run_as_system": true
     },
@@ -45,12 +30,17 @@
         "run_as_system": true
     },
     {
-        "name": "GetExampleDocument",
+        "name": "GenerateAggregationStagesCandleStick",
         "private": false,
         "run_as_system": true
     },
     {
-        "name": "EvaluateRules",
+        "name": "GenerateAggregationStagesMACD",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "GenerateAggregationStagesStochasticOscillator",
         "private": false,
         "run_as_system": true
     },
@@ -60,7 +50,7 @@
         "run_as_system": true
     },
     {
-        "name": "GenerateAggregationStagesCandleStick",
+        "name": "BinanceFetchTickerData",
         "private": false,
         "run_as_system": true
     },
@@ -68,5 +58,21 @@
         "name": "GenerateAggregationStagesInitialFiltering",
         "private": false,
         "run_as_system": true
+    },
+    {
+        "name": "GetSymbols",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "GetLatestTSCollectionStatistics",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "GetLastPrices",
+        "private": false,
+        "run_as_system": true,
+        "disable_arg_logs": true
     }
 ]
